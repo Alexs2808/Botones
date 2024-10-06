@@ -3,11 +3,13 @@ package com.example.botones
 import android.animation.Animator
 import android.animation.Animator.AnimatorListener
 import android.animation.AnimatorListenerAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import android.view.animation.AnimationUtils
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -25,6 +27,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //configuracion para pasar de una ventana a otra
+        val button  = findViewById<FloatingActionButton>(R.id.btn2)
+
+        button.setOnClickListener{
+            val intent = Intent(this, mapa::class.java)
+            startActivity(intent)
+        }
 
         somido = findViewById<FloatingActionButton>(R.id.somido)
         musica = findViewById<FloatingActionButton>(R.id.Musica)
