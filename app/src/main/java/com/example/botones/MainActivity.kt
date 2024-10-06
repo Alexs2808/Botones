@@ -16,6 +16,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.view.animation.LinearInterpolator
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     private var rotate = false
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
