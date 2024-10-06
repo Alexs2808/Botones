@@ -8,14 +8,22 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-
+import android.animation.ValueAnimator
+import android.view.animation.LinearInterpolator
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var michinauta: ImageView
+    private var screenWidth: Int = 0
+    private var screenHeight: Int = 0
+    private var velX: Float = 2.0f // Velocidad en el eje X
+    private var velY: Float = 2.0f // Velocidad en el eje Y
 
     private lateinit var somido: View
     private lateinit var musica: View
@@ -27,12 +35,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         //configuracion para pasar de una ventana a otra
-        val button  = findViewById<FloatingActionButton>(R.id.btn2)
+        val btn2  = findViewById<FloatingActionButton>(R.id.btn2)
 
-        button.setOnClickListener{
-            val intent = Intent(this, mapa::class.java)
+        btn2.setOnClickListener{
+            val intent = Intent(this, MapaActivity::class.java)
             startActivity(intent)
         }
 
@@ -68,6 +75,39 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "informacion", Toast.LENGTH_LONG).show()
         }
 
+        michinauta = findViewById(R.id.michinauta)
+
+            michinauta.post {
+                screenWidth = michinauta.rootView.width
+                screenHeight = michinauta.rootView.height
+
+                // Iniciar animación flotante
+                startFloatingAnimation()
+            }
+    }
+
+    private fun startFloatingAnimation() {
+        // Animación en X
+        val animatorX = ValueAnimator.ofFloat(0f, screenWidth.toFloat())
+        animatorX.duration = 10000 // 10 segundos
+        animatorX.interpolator = LinearInterpolator()
+        animatorX.repeatCount = ValueAnimator.INFINITE
+        animatorX.addUpdateListener { animation ->
+            val value = animation.animatedValue as Float
+            michinauta.translationX = value
+        }
+        animatorX.start()
+
+        // Animación en Y
+        val animatorY = ValueAnimator.ofFloat(0f, screenHeight.toFloat())
+        animatorY.duration = 10000
+        animatorY.interpolator = LinearInterpolator()
+        animatorY.repeatCount = ValueAnimator.INFINITE
+        animatorY.addUpdateListener { animation ->
+            val value = animation.animatedValue as Float
+            michinauta.translationY = value
+        }
+        animatorY.start()
     }
 
     private fun initShowOut(v: View){
@@ -137,4 +177,5 @@ class MainActivity : AppCompatActivity() {
         .rotation(if (rotate) 180f else 0f)
         return rotate
     }
+
 }

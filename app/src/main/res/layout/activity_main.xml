@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -8,11 +9,11 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background"
+        android:background="@drawable/fondo"
         android:scaleType="fitCenter"/>
 
 
-    <!-- Iconos de la interfaz -->
+    <!-- Iconos de la interfaz --><!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,33 +25,39 @@
         <ImageView
             android:id="@+id/settingsButton"
             android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/ic_fuerza"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_strength"
             android:layout_weight="1"/>
 
         <ImageView
             android:id="@+id/mapButton"
             android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:src="@mipmap/ic_comida"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_hungry"
             android:layout_weight="1"/>
 
         <ImageView
             android:id="@+id/missionsButton"
-            android:layout_width="30dp"
+            android:layout_width="0dp"
             android:layout_height="110dp"
-            android:src="@mipmap/ic_mental"
+            android:src="@drawable/icon_mental"
             android:layout_weight="1"/>
 
         <ImageView
             android:id="@+id/minigamesButton"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/ic_vida" />
+            android:src="@drawable/icon_healthy" />
 
 
-    </LinearLayout>
+    </LinearLayout> -->
+    <ImageView
+        android:id="@+id/michinauta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/michinautaa"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -83,6 +90,7 @@
                     android:layout_height="match_parent"
                     android:textStyle="bold"
                     android:text="Sonido"
+                    android:textColor="@color/black"
                     android:textSize="18sp"/>
 
             </androidx.cardview.widget.CardView>
@@ -92,11 +100,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="#36226A"
                 android:clickable="true"
+                android:contentDescription="TODO"
                 android:focusable="true"
-                android:src="@mipmap/ic_home"
-                app:backgroundTint="@color/white"
+                android:src="@mipmap/ic_sound"
+                app:backgroundTint="@color/black"
                 app:tint="@color/white"
                 app:fabSize="mini" />
 
@@ -120,8 +129,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text="Musica"
+                    android:text="Música"
                     android:textSize="18sp"/>
 
             </androidx.cardview.widget.CardView>
@@ -131,10 +141,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="#36226A"
                 android:clickable="true"
+                android:contentDescription="TODO"
                 android:focusable="true"
-                android:src="@mipmap/ic_home"
+                android:src="@mipmap/ic_musica"
                 app:backgroundTint="@color/white"
                 app:tint="@color/white"
                 app:fabSize="mini" />
@@ -161,6 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     android:text="Idioma"
                     android:textSize="18sp"/>
 
@@ -171,11 +183,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="#36226A"
                 android:clickable="true"
+                android:contentDescription="TODO"
                 android:focusable="true"
-                android:src="@mipmap/ic_home"
-                app:backgroundTint="@color/white"
+                android:src="@mipmap/ic_idioma"
+                app:backgroundTint="@color/black"
                 app:tint="@color/white"
                 app:fabSize="mini" />
 
@@ -201,7 +214,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:textStyle="bold"
-                    android:text="Informacion"
+                    android:textColor="@color/black"
+                    android:text="Información"
                     android:textSize="18sp"/>
 
             </androidx.cardview.widget.CardView>
@@ -211,10 +225,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="8dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="#36226A"
                 android:clickable="true"
+                android:contentDescription="TODO"
                 android:focusable="true"
-                android:src="@mipmap/ic_home"
+                android:src="@mipmap/ic_info"
                 app:backgroundTint="@color/white"
                 app:tint="@color/white"
                 app:fabSize="mini" >
@@ -234,11 +249,13 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
+        android:contentDescription="TODO"
         android:focusable="true"
         android:src="@mipmap/ic_configure"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="#36226A"
         app:fabSize="normal"
-        app:tint="@color/black"/>
+        app:tint="@color/white"
+        tools:ignore="RelativeOverlap" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn3"
@@ -249,9 +266,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
+        android:contentDescription="TODO"
         android:focusable="true"
-        android:src="@mipmap/ic_home"
-        app:backgroundTint="@color/black"
+        android:src="@drawable/icon_minigame"
+        app:backgroundTint="#36226A"
         app:fabSize="normal"
         app:tint="@color/white"/>
 
@@ -264,9 +282,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:clickable="true"
+        android:contentDescription="TODO"
         android:focusable="true"
-        android:src="@mipmap/ic_mapa"
-        app:backgroundTint="@color/black"
+        android:src="@drawable/icon_map"
+        app:backgroundTint="#36226A"
         app:fabSize="normal"
         app:tint="@color/white"/>
 
@@ -279,9 +298,10 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:clickable="true"
+        android:contentDescription="TODO"
         android:focusable="true"
-        android:src="@mipmap/ic_home"
-        app:backgroundTint="@color/black"
+        android:src="@drawable/icon_mision"
+        app:backgroundTint="#36226A"
         app:fabSize="normal"
         app:tint="@color/white"/>
 
