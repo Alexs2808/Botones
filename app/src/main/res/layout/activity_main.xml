@@ -248,7 +248,7 @@
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:focusable="true"
-        android:src="@mipmap/ic_home"
+        android:src="@mipmap/ic_configure"
         app:backgroundTint="@color/black"
         app:fabSize="normal"
         app:tint="@color/white"/>
