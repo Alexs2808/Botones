@@ -8,6 +8,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background"
         android:scaleType="centerCrop"/>
 
     <!-- Ventana circular -->
@@ -16,13 +17,14 @@
         android:layout_height="300dp"
         android:layout_gravity="center">
 
+        <!-- Gato mirando al espacio -->
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter" />
 
-        <!-- Gato mirando al espacio -->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
